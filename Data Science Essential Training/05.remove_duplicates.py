@@ -35,4 +35,13 @@ print(data_obj.drop_duplicates())
 # 0         1        a        A
 # 2         2        b        B
 # 4         3        c        C
+
+print(data_obj.drop_duplicates(['column 3']))
+
+
+   # column 1 column 2 column 3
+# 0         1        a        A
+# 2         2        b        B
+# 4         3        c        C
+# 5         3        c        D
      

@@ -1,18 +1,19 @@
-import psycopg2
+import mysql.connector
 import getpass
 
 # Get user input
-usernames = input("Enter comma-separated list of usernames to check: ")
 password = getpass.getpass("Enter database password: ")
+usernames = raw_input("Enter comma-separated list of usernames to check: ")
+
 
 # Split the list of usernames into individual usernames
 usernames_list = [u.strip() for u in usernames.split(",")]
 
 # Connect to the database
-conn = psycopg2.connect(
+conn = mysql.connector.connect(
     host="localhost",
-    database="yourdatabase",
-    user="yourusername",
+    database="mysql",
+    user="root",
     password=password
 )
 
@@ -22,7 +23,7 @@ cursor = conn.cursor()
 # Loop over each username and execute the query
 for username in usernames_list:
     # Execute the query
-    query = "SELECT * FROM users WHERE username = %s"
+    query = "SELECT * FROM user WHERE user = %s"
     cursor.execute(query, (username,))
 
     # Fetch the results
@@ -30,9 +31,9 @@ for username in usernames_list:
 
     # Check if the user was found
     if result:
-        print(f"{username} found in the database")
+        print username + " found in the database"
     else:
-        print(f"{username} not found in the database")
+        print username + " not found in the database"
 
 # Clean up
 cursor.close()

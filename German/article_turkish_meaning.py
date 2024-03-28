@@ -60,11 +60,14 @@ def practice_articles():
         article = random.choice(list(words_data.keys()))
         german_word, word_data = random.choice(list(words_data[article].items()))
         turkish_meaning = word_data['turkish_meaning']
-        
+        print('Please Type "quit" to end the program')
         user_input = raw_input("Please enter the correct article for '{}': ".format(german_word)).strip().lower()
         
         if user_input == article:
             print("Correct! '{}' means '{}' in Turkish.".format(german_word, turkish_meaning))
+        elif user_input == 'quit':
+            print('Take care!')
+            break
         else:
             print("Wrong! The correct article for '{}' is '{}'. '{}' means '{}' in Turkish.".format(
                 german_word, article, german_word, turkish_meaning))

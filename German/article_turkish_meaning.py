@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import pyttsx3
 import random
 
 words_data = {
@@ -54,6 +55,13 @@ words_data = {
         'Kleid': {'turkish_meaning': 'elbise'}
     }
 }
+engine = pyttsx3.init()
+
+def speak(word):
+    engine.say(word)
+    engine.runAndWait()
+
+
 
 def practice_articles():
     while True:

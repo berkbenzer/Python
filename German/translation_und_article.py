@@ -94,6 +94,11 @@ words_data = {
     }
 }
 
+engine = pyttsx3.init()
+
+def speak(word):
+    engine.say(word)
+    engine.runAndWait()
 
 def practice_articles():
     while True:
@@ -116,6 +121,8 @@ def practice_articles():
         else:
            print("\033[91mWrong! The correct article for '{}' is '{}'. '{}' means '{}' in Turkish.\033[0m".format(
                 german_word, article, german_word, turkish_meaning))
+	speak(german_word)
+
 
 def practice_translation():
     while True:

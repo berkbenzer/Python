@@ -95,7 +95,6 @@ words_data = {
 }
 
 
-
 def practice_articles():
     while True:
         article = random.choice(list(words_data.keys()))
@@ -106,16 +105,16 @@ def practice_articles():
         
         if user_input == article:
             print("Correct! '{}' means '{}' in Turkish.".format(german_word, turkish_meaning))
-        elif user_input == 'quit':
-            print('Take care!')
-            break
         elif user_input == "2":
            print("##########################################")
            print("# Welcome to Translation Practice Sesion #")
            print("##########################################")
            practice_translation()
+        elif user_input == 'quit':
+            print('Take care!')
+            break
         else:
-            print("Wrong! The correct article for '{}' is '{}'. '{}' means '{}' in Turkish.".format(
+           print("\033[91mWrong! The correct article for '{}' is '{}'. '{}' means '{}' in Turkish.\033[0m".format(
                 german_word, article, german_word, turkish_meaning))
 
 def practice_translation():
@@ -133,10 +132,10 @@ def practice_translation():
            print("#######################################")
            practice_articles()
         elif user_input == 'quit':
-            print('Take care!')
-            break
-        else:
-           print("Falschi! The correct translation for '{}' means '{}' in Turkish.".format(
+           print('Take care!')
+           break
+	else:
+           print("\033[91mFalsch! The correct translation for '{}' means '{}' in Turkish.\033[0m".format(
                 german_word_tr, turkish_meaning))
        
 
@@ -148,7 +147,7 @@ if __name__ == "__main__":
       print("# Welcome to Article Practice Session #")
       print("#######################################")
       practice_articles()
-    else:
+    elif user_input_selection == "2":
       print("####################################################")
       print("# Welcome to German-Turkish translastion practice! #")
       print("####################################################")

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import random
-
+import pyttsx3
 
 words_data = {
     'der': {

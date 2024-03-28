@@ -22,11 +22,14 @@ def practice_articles():
     while True:
         article = random.choice(list(articles.keys()))
         noun = random.choice(articles[article])
-
+        print('Please Type "quit" to end the program')
         user_input = raw_input('Please enter the correct article for "{}": '.format(noun)).strip().lower()
 
         if user_input == article:
             print("Correct!")
+        elif user_input == 'quit':
+            print('Take care!')
+            break
         else:
             print('Wrong! The correct article for "{}" is "{}".'.format(noun, article))
 

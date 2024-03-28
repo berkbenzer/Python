@@ -2,12 +2,12 @@
 
 import random
 
+
 words_data = {
     'der': {
         'Hund': {'turkish_meaning': 'köpek'},
         'Tisch': {'turkish_meaning': 'masa'},
         'Stuhl': {'turkish_meaning': 'sandalye'},
-        'Apfel': {'turkish_meaning': 'elma'},
         'Mann': {'turkish_meaning': 'adam'},
         'Himmel': {'turkish_meaning': 'gökyüzü'},
         'Mond': {'turkish_meaning': 'ay'},
@@ -17,13 +17,25 @@ words_data = {
         'See': {'turkish_meaning': 'göl'},
         'Haus': {'turkish_meaning': 'ev'},
         'Fenster': {'turkish_meaning': 'pencere'},
-        'Tür': {'turkish_meaning': 'kapı'}
+        'Tür': {'turkish_meaning': 'kapı'},
+        'Baum': {'turkish_meaning': 'ağaç'},
+        'Stift': {'turkish_meaning': 'kalem'},
+        'Zug': {'turkish_meaning': 'tren'},
+        'Garten': {'turkish_meaning': 'bahçe'},
+        'Vogel': {'turkish_meaning': 'kuş'},
+        'Freund': {'turkish_meaning': 'arkadaş'},
+        'Lehrer': {'turkish_meaning': 'öğretmen'},
+        'Schuh': {'turkish_meaning': 'ayakkabı'},
+        'Brief': {'turkish_meaning': 'mektup'},
+        'Schlüssel': {'turkish_meaning': 'anahtar'},
+        'Kopf': {'turkish_meaning': 'baş'},
+        'Computer': {'turkish_meaning': 'bilgisayar'}
     },
     'die': {
+        'Apfel': {'turkish_meaning': 'elma'},
         'Frau': {'turkish_meaning': 'kadın'},
         'Katze': {'turkish_meaning': 'kedi'},
         'Blume': {'turkish_meaning': 'çiçek'},
-        'Frau': {'turkish_meaning': 'kadın'},
         'Ente': {'turkish_meaning': 'ördek'},
         'Schule': {'turkish_meaning': 'okul'},
         'Universität': {'turkish_meaning': 'üniversite'},
@@ -34,7 +46,17 @@ words_data = {
         'Blatt': {'turkish_meaning': 'yaprak'},
         'Straße': {'turkish_meaning': 'cadde'},
         'Zeitung': {'turkish_meaning': 'gazete'},
-        'Zeitschrift': {'turkish_meaning': 'dergi'}
+        'Zeitschrift': {'turkish_meaning': 'dergi'},
+        'Tasche': {'turkish_meaning': 'çanta'},
+        'Uhr': {'turkish_meaning': 'saat'},
+        'Karte': {'turkish_meaning': 'harita'},
+        'Maus': {'turkish_meaning': 'fare'},
+        'Nacht': {'turkish_meaning': 'gece'},
+        'Idee': {'turkish_meaning': 'fikir'},
+        'Woche': {'turkish_meaning': 'hafta'},
+        'Sonne': {'turkish_meaning': 'güneş'},
+        'Arbeit': {'turkish_meaning': 'iş'},
+        'Stunde': {'turkish_meaning': 'saat'}
     },
     'das': {
         'Buch': {'turkish_meaning': 'kitap'},
@@ -51,9 +73,27 @@ words_data = {
         'Computer': {'turkish_meaning': 'bilgisayar'},
         'Hemd': {'turkish_meaning': 'gömlek'},
         'Mantel': {'turkish_meaning': 'palto'},
-        'Kleid': {'turkish_meaning': 'elbise'}
+        'Kleid': {'turkish_meaning': 'elbise'},
+        'Spiel': {'turkish_meaning': 'oyun'},
+        'Bild': {'turkish_meaning': 'resim'},
+        'Licht': {'turkish_meaning': 'ışık'},
+        'Leben': {'turkish_meaning': 'hayat'},
+        'Bett': {'turkish_meaning': 'yatak'},
+        'Zimmer': {'turkish_meaning': 'oda'},
+        'Gesicht': {'turkish_meaning': 'yüz'},
+        'Wort': {'turkish_meaning': 'kelime'},
+        'Beispiel': {'turkish_meaning': 'örnek'},
+        'Problem': {'turkish_meaning': 'problem'},
+        'Thema': {'turkish_meaning': 'tema'},
+        'Ende': {'turkish_meaning': 'son'},
+        'Bier': {'turkish_meaning': 'bira'},
+        'Jahr': {'turkish_meaning': 'yıl'},
+        'Name': {'turkish_meaning': 'isim'},
+        'Foto': {'turkish_meaning': 'fotoğraf'},
+        'Frühstück': {'turkish_meaning': 'kahvaltı'}
     }
 }
+
 
 
 def practice_articles():

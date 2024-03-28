@@ -62,25 +62,60 @@ def speak(word):
     engine.runAndWait()
 
 
-
 def practice_articles():
     while True:
         article = random.choice(list(words_data.keys()))
         german_word, word_data = random.choice(list(words_data[article].items()))
         turkish_meaning = word_data['turkish_meaning']
         print('Please Type "quit" to end the program')
-        user_input = raw_input("Please enter the correct article for '{}': ".format(german_word)).strip().lower()
+        user_input = input("Please enter the correct article for '{}': ".format(german_word)).strip().lower()
         
         if user_input == article:
             print("Correct! '{}' means '{}' in Turkish.".format(german_word, turkish_meaning))
+        elif user_input == "2":
+           print("##########################################")
+           print("# Welcome to Translation Practice Sesion #")
+           print("##########################################")
+           practice_translation()
         elif user_input == 'quit':
             print('Take care!')
             break
         else:
-            print("Wrong! The correct article for '{}' is '{}'. '{}' means '{}' in Turkish.".format(
+           print("\033[91mWrong! The correct article for '{}' is '{}'. '{}' means '{}' in Turkish.\033[0m".format(
                 german_word, article, german_word, turkish_meaning))
+        speak(german_word)
+
+def practice_translation():
+    while True:
+        article_tr = random.choice(list(words_data.keys()))
+        german_word_tr, word_data = random.choice(list(words_data[article_tr].items()))
+        turkish_meaning = word_data['turkish_meaning']
+        user_input = input("Please enter the correct translation for '{}': ".format(german_word_tr)).strip().lower()
         
+        if user_input == turkish_meaning:
+           print("Korrect!")
+        elif user_input == "1":
+           print("#######################################")
+           print("# Welcome to Article Practice Session #")
+           print("#######################################")
+           practice_articles()
+        elif user_input == 'quit':
+           print('Take care!')
+           break
+        else:
+           print("\033[91mFalsch! The correct translation for '{}' means '{}' in Turkish.\033[0m".format(german_word_tr, turkish_meaning))
+       
 
 if __name__ == "__main__":
-    print("Welcome to German articles practice!")
-    practice_articles()
+    print("Welcome to German practice!")
+    user_input_selection = input("For article practice press 1 for German to Turkish translation press 2: ")
+    if user_input_selection == "1":
+      print("#######################################")
+      print("# Welcome to Article Practice Session #")
+      print("#######################################")
+      practice_articles()
+    elif user_input_selection == "2":
+      print("####################################################")
+      print("# Welcome to German-Turkish translastion practice! #")
+      print("####################################################")
+      practice_translation()  

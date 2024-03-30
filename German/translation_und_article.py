@@ -3,6 +3,18 @@
 import random
 import pyttsx3
 
+
+verbs = {
+    'first': ['sind', 'haben', 'gehen', 'machen', 'kommen', 'sehen', 'finden', 'nehmen', 'sprechen', 'lesen', 'essen', 'trinken', 'fahren', 'schreiben', 'stehen', 'sitzen', 'liegen', 'laufen', 'arbeiten', 'spielen', 'lernen', 'fühlen', 'kennen', 'denken', 'sagen'],
+    'ich': ['bin', 'habe', 'gehe', 'mache', 'komme', 'sehe', 'finde', 'nehme', 'spreche', 'lese', 'esse', 'trinke', 'fahre', 'schreibe', 'stehe', 'sitze', 'liege', 'laufe', 'arbeite', 'spiele', 'lerne', 'fühle', 'kenne', 'denke', 'sage'],
+    'du': ['bist', 'hast', 'gehst', 'machst', 'kommst', 'siehst', 'findest', 'nimmst', 'sprichst', 'liest', 'isst', 'trinkst', 'fährst', 'schreibst', 'stehst', 'sitzt', 'liegst', 'läufst', 'arbeitest', 'spielst', 'lernst', 'fühlst', 'kennst', 'denkst', 'sagst'],
+    'er/sie/es': ['ist', 'hat', 'geht', 'macht', 'kommt', 'sieht', 'findet', 'nimmt', 'spricht', 'liest', 'isst', 'trinkt', 'fährt', 'schreibt', 'steht', 'sitzt', 'liegt', 'läuft', 'arbeitet', 'spielt', 'lernt', 'fühlt', 'kennt', 'denkt', 'sagt'],
+    'wir': ['sind', 'haben', 'gehen', 'machen', 'kommen', 'sehen', 'finden', 'nehmen', 'sprechen', 'lesen', 'essen', 'trinken', 'fahren', 'schreiben', 'stehen', 'sitzen', 'liegen', 'laufen', 'arbeiten', 'spielen', 'lernen', 'fühlen', 'kennen', 'denken', 'sagen'],
+    'ihr': ['seid', 'habt', 'geht', 'macht', 'kommt', 'seht', 'findet', 'nehmt', 'sprecht', 'lest', 'esst', 'trinkt', 'fahrt', 'schreibt', 'steht', 'sitzt', 'liegt', 'lauft', 'arbeitet', 'spielt', 'lernt', 'fühlt', 'kennt', 'denkt', 'sagt'],
+    'sie/Sie': ['sind', 'haben', 'gehen', 'machen', 'kommen', 'sehen', 'finden', 'nehmen', 'sprechen', 'lesen', 'essen', 'trinken', 'fahren', 'schreiben', 'stehen', 'sitzen', 'liegen', 'laufen', 'arbeiten', 'spielen', 'lernen', 'fühlen', 'kennen', 'denken', 'sagen']
+}
+
+
 words_data = {
     'der': {
         'Hund': {'turkish_meaning': 'köpek'},
@@ -100,6 +112,36 @@ def speak(word):
     engine.say(word)
     engine.runAndWait()
 
+
+def practice_verbs():
+    while True:
+
+        chosen_verb = random.choice(verbs['first'])
+        position_of_random = verbs['first'].index(chosen_verb) 
+        chosen_item = random.choice(list(verbs.keys()))
+        chosen_item_value = verbs[chosen_item]
+        list_chosen_item_value = list(chosen_item_value)
+        position_of_random_item = list_chosen_item_value[position_of_random]
+
+        user_input_verbs = input("Please enter Correct form of the '{}' for '{}': " .format(chosen_verb, chosen_item)).strip().lower()
+
+        if user_input_verbs == position_of_random_item:
+           print("Korrect")
+        elif user_input_verbs == "2":
+           print("##########################################")
+           print("# Welcome to Translation Practice Sesion #")
+           print("##########################################")
+           practice_translation()
+        elif user_input_verbs == "1":
+           print("#######################################")
+           print("# Welcome to Article Practice Session #")
+           print("#######################################")
+           practice_articles()
+        else:
+           print("Falch")
+
+
+
 def practice_articles():
     while True:
         article = random.choice(list(words_data.keys()))
@@ -158,5 +200,10 @@ if __name__ == "__main__":
       print("####################################################")
       print("# Welcome to German-Turkish translastion practice! #")
       print("####################################################")
-      practice_translation()  
+      practice_translation()
+    elif user_input_selection == "3":
+      print("###########################################")
+      print("# Welcome to Right Form of Verb Practice! #")
+      print("###########################################")
+      practice_verbs()  
 

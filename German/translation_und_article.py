@@ -138,7 +138,8 @@ def practice_verbs():
            print("#######################################")
            practice_articles()
         else:
-           print("Falch")
+           print("\033[91mFalch! Correct form for the Verb is '{}' for '{}'.\033[0m".format(position_of_random_item, chosen_item ))
+
 
 
 

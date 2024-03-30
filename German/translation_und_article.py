@@ -191,7 +191,7 @@ def practice_translation():
 
 if __name__ == "__main__":
     print("Welcome to German practice!")
-    user_input_selection = raw_input("For article practice press 1 for German to Turkish translation press 2: ")
+    user_input_selection = input("For Article Practice Session Please Press 1\nFor German to Turkish translation Practice Session Please Press 2\nFor Right Form of Verb Practice Please Press 3: ")
     if user_input_selection == "1":
       print("#######################################")
       print("# Welcome to Article Practice Session #")
